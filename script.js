@@ -4,7 +4,7 @@ let inputCont = document.querySelector(".to-do-input-cont");
 let wtrBtn = document.querySelector(".wtr-btn");
 let wtrinput = document.querySelector(".wtr-el");
 const baseUrl =
-  "http://api.weatherapi.com/v1/current.json?key=938b7483d52d44ba981133330252401&q=";
+  "https://api.weatherapi.com/v1/current.json?key=938b7483d52d44ba981133330252401&q=";
 let wtrCont = document.querySelector(".wtr-cont");
 let trial = document.getElementById("wheather");
 let timerCont = document.querySelector(".timer-cont");
