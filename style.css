@@ -293,8 +293,8 @@ button:hover {
 }
 @media screen and (max-width: 576px) {
   body {
-    display: flex;
-    flex-flow: column wrap;
+    display: grid;
+    grid-template-columns:1fr;
   }
   .timings {
     display: flex;
