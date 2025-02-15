@@ -291,3 +291,20 @@ button:hover {
   outline: 1px solid whitesmoke;
   outline-offset: 2px;
 }
+@media screen and (max-width: 576px) {
+  body {
+    display: flex;
+    flex-flow: column wrap;
+  }
+  .timings {
+    display: flex;
+    flex-direction: column;
+  }
+  .del-btn,
+  .input-btn,
+  .input::placeholder {
+    font-size: 14px;
+    max-width: fit-content;
+    padding: 5px;
+  }
+}
