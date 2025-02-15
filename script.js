@@ -41,54 +41,32 @@ inputBtn.addEventListener("click", () => {
 });
 wtrBtn.addEventListener("click", async (evt) => {
   evt.preventDefault();
-  const wtrVal = wtrinput.value;
-  let url = `${baseUrl}${wtrVal}&aqi=no`; //&aqi=no
-  let response = await fetch(url);
-  console.log(response);
-  let data = await response.json();
-  console.log(data);
+  const city = wtrinput.value;
 
-  let state = data.current;
+  const apiUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
+    city
+  )}&count=1`;
 
-  console.log("getting state...");
-  console.log(state);
+  const geoResponse = await fetch(apiUrl);
+  console.log(geoResponse);
+  const geoData = await geoResponse.json();
+  console.log(geoData);
+  const { latitude, longitude } = geoData.results[0];
+  const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
 
-  let tempC = state.temp_c;
-
-  console.log("getting temp");
-  console.log(tempC);
-  let tempF = state.temp_f;
-  console.log(tempF);
-
-  let region = data.location.region;
-  console.log(region);
-
-  let country = data.location.country;
-  console.log(country);
-  let localTime = data.location.localtime;
-  console.log(localTime);
-
-  let status = data.current.condition.text;
-  let tempFeelC = state.feelslike_c;
-  let tempFeelF = state.feelslike_f;
-
-  // let updatePara = document.createElement("p")
-  // updatePara.textContent = `The weather in ${wtrVal} , region : ${region} , is due . the temperature is ${tempC} C / ${tempF} F . the current local time is ${localTime}`
-  // updatePara.append(wtrDiv)
-  // wtrDiv.append(wtrCont)
-  // trial.textContent =  `The weather in ${wtrVal} , region : ${region} , is due . the temperature is ${tempC} C / ${tempF} F . the current local time is ${localTime}`
+  const weatherResponse = await fetch(weatherUrl);
+  console.log(weatherResponse);
+  const weatherData = await weatherResponse.json();
+  console.log(weatherData);
+  // const current = weatherData.current_weather;
+  console.log(weatherData.current_weather.temperature);
 
   const infoDiv = document.createElement("div");
   infoDiv.classList.add("wtr-update");
-  // infoDiv.classList.add("typing")
   infoDiv.innerHTML = `
-      <p>Country: ${country}</p>
-      <p>Region: ${region}</p>
-      <p>Local Time : ${localTime} </p>
-      <p>Status : ${status}</p>
-      <p>Temperature: ${tempC} C / ${tempF} F</p>
-      <p>Feels like : ${tempFeelC} C / ${tempFeelF} F</p>
-      <p>Wind speed : ${state.wind_kph} kph</p>
+      <p>City: ${city}</p>
+      <p>temperature: ${weatherData.current_weather.temperature}°C</p>
+      <p>Wind speed :  ${weatherData.current_weather.windspeed} km/h</p>    
     `;
   document.getElementById("wtr-cont-id").appendChild(infoDiv);
 });
@@ -160,3 +138,7 @@ quoteBtn.addEventListener("click", async () => {
 
   quotePara.textContent = '"' + quote + '"';
 });
+
+async function fetchWeatherByCity(city) {}
+
+// Example usage:
