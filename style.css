@@ -1,0 +1,293 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  text-transform: capitalize;
+  background-color: midnightblue;
+  /* background: linear-gradient(
+    90deg,
+    red,
+    green,
+    limegreen,
+    yellow,
+    pink,
+    yellow,
+    limegreen,
+    green,
+    red
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite; */
+}
+.to-do-cont,
+.timer-cont,
+.quote-cont,
+.wtr-cont {
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 1rem 1rem 1rem 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+
+  opacity: 0.9;
+}
+.to-do-cont,
+.timer-cont {
+  /* background: linear-gradient(-45deg, #1e90ff, #00bcd4, #2196f3, #87ceeb); */
+  background: linear-gradient(
+    45deg,
+    purple,
+    pink,
+    steelblue,
+    dodgerblue,
+    darkcyan,
+    pink,
+    purple
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+}
+.quote-cont,
+.wtr-cont {
+  /* background: linear-gradient(45deg, #1e90ff, #00bcd4, #2196f3, #87ceeb); */
+  background: linear-gradient(
+    45deg,
+    purple,
+    pink,
+    steelblue,
+    dodgerblue,
+    darkcyan,
+    pink,
+    purple
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+}
+/* .head{
+    background-image: url("../../javascript/images/santorini.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+} */
+button,
+input {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  background-color: black;
+}
+.to-do-input-cont {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.og {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.non-og {
+  color: steelblue;
+  border: none;
+  background-color: yellow;
+  border-bottom: 1 solid black;
+  border-radius: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+.flex {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.8rem;
+}
+.input-btn {
+  font-size: 1.5rem;
+  width: max-content;
+  height: max-content;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: black;
+}
+.del-btn {
+  width: max-content;
+  height: max-content;
+  font-size: 0.75rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: black;
+}
+.wtr-cont {
+  /* display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    justify-content: center ; 
+    align-items: center; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  /* gap: 2rem; */
+}
+.wtr-update {
+  color: whitesmoke;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+button:active {
+  transform: scale(0.9);
+}
+input:hover {
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  opacity: 0.9;
+}
+.timer-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.tmr {
+  font-size: 1rem;
+  padding: 0.4rem;
+}
+.timer-input-cont {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.timer-cont input::placeholder {
+  text-align: center;
+}
+.timer-holder {
+  min-width: 200px;
+  min-height: 200px;
+  border: 2px solid lightgray;
+  border-radius: 100px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 400;
+  color: whitesmoke;
+  background: linear-gradient(
+    45deg,
+    #ff6f61,
+    #ffc107,
+    #4caf50,
+    #2196f3,
+    #9c27b0
+  );
+  background-size: 300% 300%;
+  animation: gradientAnimation 5s ease infinite;
+}
+.to-do-cont,
+.wtr-cont,
+.quote-cont,
+.timer-cont {
+  perspective: 1000px;
+}
+.to-do-cont:hover,
+.wtr-cont:hover,
+.quote-cont:hover,
+.timer-cont:hover {
+  /* card tilt */
+
+  /* transform: rotateY(15deg) rotateX(-10deg);
+    transition: transform 0.5s; */
+
+  /* float */
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.quote-cont {
+  padding-top: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+}
+.quote-para {
+  color: whitesmoke;
+  font-size: 2rem;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.hide {
+  display: none;
+}
+button,
+input,
+input::placeholder {
+  color: whitesmoke;
+  font-weight: 600;
+}
+/* text animations  */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+.typing {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #0f0;
+  width: 0;
+  animation: typing 3s steps(20, end), blink 0.5s step-end infinite alternate;
+}
+input:hover,
+button:hover {
+  outline: 1px solid whitesmoke;
+  outline-offset: 2px;
+}

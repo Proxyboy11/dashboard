@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./money_.css" />
+  </head>
+  <body>
+    <div class="to-do-cont">
+      <h1 class="to-do-heading head">To Do List</h1>
+
+      <div class="to-do-input-cont">
+        <div class="input-og flex">
+          <input
+            type="text"
+            placeholder="what will you do ?"
+            id="input-el"
+            class="og"
+          />
+          <button class="input-btn">+</button>
+        </div>
+      </div>
+    </div>
+    <div class="wtr-cont" id="wtr-cont-id">
+      <h1 class="wt-heading head">Weather in your city</h1>
+      <input type="text" class="wtr-el og" placeholder="type your city " />
+      <button class="wtr-btn input-btn">Get weather status</button>
+      <p id="wheather"></p>
+    </div>
+    <div class="timer-cont">
+      <h1 class="wt-heading head">Timer</h1>
+      <div class="timer-input-cont">
+        <div class="timings flex">
+          <input type="text" placeholder="hours" id="hr" class="og tmr" />
+          <input type="text" placeholder="minutes" id="min" class="og tmr" />
+          <input type="text" placeholder="seconds" id="sec" class="og tmr" />
+        </div>
+        <div class="timer-btn-cont flex">
+          <button class="timer-btn input-btn" id="start-timer">
+            Start Timer
+          </button>
+          <button class="timer-btn input-btn hide" id="reset-btn">
+            Reset Timer
+          </button>
+          <button class="pause-btn input-btn hide" id="pause-btn">Pause</button>
+        </div>
+        <div class="timer-holder">
+          <p id="timer-display"></p>
+        </div>
+      </div>
+    </div>
+    <div class="quote-cont">
+      <h1 class="quote head">quote of the day</h1>
+      <button class="quote-btn input-btn" id="quote-el">Get quote</button>
+      <p class="quote-para"></p>
+    </div>
+    <div class="container">
+      <h1 class="nowrap">Currency Converter</h1>
+      <form>
+        <div class="amount">
+          <p class="nowrap">Enter Amount</p>
+          <input type="text" value="100" />
+        </div>
+        <div class="dropdown">
+          <div class="from">
+            <p class="list">from</p>
+            <div class="select-cont">
+              <img
+                src="https://flagsapi.com/US/flat/64.png"
+                alt="a country flag"
+              />
+              <select name="from"></select>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-right-arrow-left"></i>
+          <div class="to">
+            <p class="list">to</p>
+            <div class="select-cont">
+              <img
+                src="https://flagsapi.com/IN/flat/64.png"
+                alt="a country flag"
+              />
+              <select name="to"></select>
+            </div>
+          </div>
+        </div>
+        <div class="msg">
+          <p id="final-msg" class="nowrap">convert currencies easily !!</p>
+          <button class="submit">Get exchange rate</button>
+        </div>
+      </form>
+    </div>
+    <script src="./codes.js"></script>
+    <script src="./money__.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
