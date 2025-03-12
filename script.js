@@ -48,18 +48,12 @@ wtrBtn.addEventListener("click", async (evt) => {
   )}&count=1`;
 
   const geoResponse = await fetch(apiUrl);
-  console.log(geoResponse);
   const geoData = await geoResponse.json();
-  console.log(geoData);
   const { latitude, longitude } = geoData.results[0];
   const weatherUrl = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
 
   const weatherResponse = await fetch(weatherUrl);
-  console.log(weatherResponse);
   const weatherData = await weatherResponse.json();
-  console.log(weatherData);
-  // const current = weatherData.current_weather;
-  console.log(weatherData.current_weather.temperature);
 
   const infoDiv = document.createElement("div");
   infoDiv.classList.add("wtr-update");
@@ -122,23 +116,14 @@ pauseBtn.addEventListener("click", () => {
 });
 
 quoteBtn.addEventListener("click", async () => {
-  console.log("button is clicked");
   let proxyUrl = "https://cors-anywhere.herokuapp.com/";
   let quoteUrl = "https://zenquotes.io/api/random";
 
-  console.log("getting response...");
   let response = await fetch(proxyUrl + quoteUrl);
-  console.log(response);
-  console.log("getting data...");
   let data = await response.json();
-  console.log(data); // Logs the quote data
-  console.log("getting quote...");
   let quote = data[0].q;
-  console.log(quote);
 
   quotePara.textContent = '"' + quote + '"';
 });
 
 async function fetchWeatherByCity(city) {}
-
-// Example usage:
