@@ -45,20 +45,12 @@ button.addEventListener("click", async (evt) => {
     amtVal = 1;
     amount.value = "1";
   }
-  console.log(fromCurr.value, toCurr.value);
   const URL = `${BASEURL}/${fromCurr.value}`;
   let response = await fetch(URL);
-  console.log("getting response...");
 
-  console.log(response);
   let data = await response.json();
-  console.log("getting data...");
 
-  console.log(data);
   let rate = data.conversion_rates[toCurr.value];
-  console.log(rate); // rate = 1 fromcurr in tocurr like 1$=86
-  console.log(amtVal);
   let final = amtVal * rate;
-  console.log(final);
   finalMsg.textContent = `${amtVal} ${fromCurr.value} = ${final} ${toCurr.value}`;
 });
